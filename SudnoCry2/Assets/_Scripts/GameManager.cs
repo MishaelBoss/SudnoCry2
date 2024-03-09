@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(BonusShop());
 
-        coin = 0;
         audioCoin = GetComponent<AudioSource>();
         audioCoin = GetComponent<AudioSource>();
 
@@ -207,19 +206,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void DeletPlayerPrefs()
-    {
-        PlayerPrefs.DeleteAll();
-    }
+        => PlayerPrefs.DeleteAll();
 
     public void RestartGame()
-    {
-        SceneManager.LoadScene(0);
-    }
+        =>SceneManager.LoadScene(0);
 
     public void URL(string url)
-    {
-        Application.OpenURL(url);
-    }
+        => Application.OpenURL(url);
 
     public void RU()
     {
