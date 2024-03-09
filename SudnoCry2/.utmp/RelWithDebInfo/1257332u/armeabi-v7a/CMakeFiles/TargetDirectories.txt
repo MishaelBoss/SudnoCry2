@@ -1,0 +1,5 @@
+F:/Unity/Projects/SudnoCry2/.utmp/RelWithDebInfo/1257332u/armeabi-v7a/CMakeFiles/edit_cache.dir
+F:/Unity/Projects/SudnoCry2/.utmp/RelWithDebInfo/1257332u/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+F:/Unity/Projects/SudnoCry2/.utmp/RelWithDebInfo/1257332u/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+F:/Unity/Projects/SudnoCry2/.utmp/RelWithDebInfo/1257332u/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+F:/Unity/Projects/SudnoCry2/.utmp/RelWithDebInfo/1257332u/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

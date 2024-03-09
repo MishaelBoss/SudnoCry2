@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: social network
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e0197fff14a9e26409b74f4f97a9ed81, type: 3}
+    - {fileID: 2800000, guid: a36b21ca6bd40f540b831f25dc59df09, type: 3}
+    - {fileID: 2800000, guid: 2bf7f5995e4ca9244835de781c5061f1, type: 3}
+    - {fileID: 2800000, guid: 76f6380ddc1cad4498baa1059740a5d9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 2bf7f5995e4ca9244835de781c5061f1: 168440607956209271
+    - a36b21ca6bd40f540b831f25dc59df09: 513334965560034060
+    - 76f6380ddc1cad4498baa1059740a5d9: 6096384262406475897
+    - e0197fff14a9e26409b74f4f97a9ed81: 956748916486620929
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 168440607956209271, guid: 2bf7f5995e4ca9244835de781c5061f1, type: 3}
+  - {fileID: 513334965560034060, guid: a36b21ca6bd40f540b831f25dc59df09, type: 3}
+  - {fileID: 6096384262406475897, guid: 76f6380ddc1cad4498baa1059740a5d9, type: 3}
+  - {fileID: 956748916486620929, guid: e0197fff14a9e26409b74f4f97a9ed81, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - vk_0
+  - GitHub_0
+  - YouTube_0
+  - discord_0
+  m_RenderDataMap: {}
+  m_Tag: social network
+  m_IsVariant: 0
