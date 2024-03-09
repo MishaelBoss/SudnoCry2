@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     public Button reword1;
     public GameObject achieve1;
 
+    public GameObject notMany;
+
     private Save sv = new Save();
 
     private void Awake()
@@ -174,6 +176,8 @@ public class GameManager : MonoBehaviour
             CostInt[0] *= 2;
             ClickScore *= 2;
         }
+        else
+            notMany.SetActive(true);
     }
 
     public void Shop()
@@ -184,6 +188,8 @@ public class GameManager : MonoBehaviour
             CostInt[1] *= 2;
             CostBonus[0] += 15;
         }
+        else
+            notMany.SetActive(true);
     }
 
     IEnumerator BonusShop()

@@ -16,9 +16,7 @@ public class Achieve : MonoBehaviour
     Animator animator;
 
     void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+        => animator = GetComponent<Animator>();
 
     void Update()
     {
@@ -28,7 +26,7 @@ public class Achieve : MonoBehaviour
         {
             _achieve.gameObject.SetActive(true);
             animator.SetTrigger("Black");
-            Invoke("DeketAcieve", 3f);
+            Invoke("DeketAcieve", 2f);
             
         }
     }
