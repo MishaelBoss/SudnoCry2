@@ -12708,6 +12708,7 @@ GameObject:
   - component: {fileID: 1697868951}
   - component: {fileID: 1697868952}
   - component: {fileID: 1697868954}
+  - component: {fileID: 1697868955}
   m_Layer: 5
   m_Name: Maner
   m_TagString: Untagged
@@ -12817,8 +12818,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1697868954}
-        m_TargetAssemblyTypeName: ButtonAnimatorPanel, Assembly-CSharp
+      - m_Target: {fileID: 1697868955}
+        m_TargetAssemblyTypeName: ClicerAnimDOTween, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
         m_Arguments:
@@ -12870,12 +12871,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5b8baddc5ad344a831f3ee9d39c1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1697868946}
+--- !u!114 &1697868955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697868946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5637566b35994148a8d3cbbfdb397b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1709822426
 GameObject:
   m_ObjectHideFlags: 0
