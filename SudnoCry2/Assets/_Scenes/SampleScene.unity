@@ -12818,8 +12818,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1697868955}
-        m_TargetAssemblyTypeName: ClicerAnimDOTween, Assembly-CSharp
+      - m_Target: {fileID: 1697868954}
+        m_TargetAssemblyTypeName: ButtonAnimatorPanel, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
         m_Arguments:
@@ -12850,7 +12850,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d8e09b8cd59efb4b858bb501db69511, type: 2}
   m_CullingMode: 0
@@ -12871,7 +12871,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5b8baddc5ad344a831f3ee9d39c1e9, type: 3}
   m_Name: 
@@ -12884,7 +12884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5637566b35994148a8d3cbbfdb397b1, type: 3}
   m_Name: 

@@ -27,6 +27,9 @@ public class ButtonAnimatorPanel : MonoBehaviour
         Invoke("FalsePanel", 1f);
     }
 
+    public void Click()
+        => animator.SetTrigger("Click");
+
     void FalsePanel()
         => panel.SetActive(false);
 }

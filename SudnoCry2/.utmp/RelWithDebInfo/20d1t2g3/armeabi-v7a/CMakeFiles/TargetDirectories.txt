@@ -1,0 +1,5 @@
+C:/Users/micha/Documents/GitHub/SudnoCry2/SudnoCry2/.utmp/RelWithDebInfo/20d1t2g3/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/micha/Documents/GitHub/SudnoCry2/SudnoCry2/.utmp/RelWithDebInfo/20d1t2g3/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/micha/Documents/GitHub/SudnoCry2/SudnoCry2/.utmp/RelWithDebInfo/20d1t2g3/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/micha/Documents/GitHub/SudnoCry2/SudnoCry2/.utmp/RelWithDebInfo/20d1t2g3/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/micha/Documents/GitHub/SudnoCry2/SudnoCry2/.utmp/RelWithDebInfo/20d1t2g3/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
