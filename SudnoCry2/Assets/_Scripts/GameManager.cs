@@ -8,15 +8,6 @@ using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Fps")]
-    [SerializeField] int FPS = 30;
-    [SerializeField] private Text fpsText;
-    [SerializeField] private float updateInterval = 0.5f;
-
-    private float accum = 0.0f;
-    private int frames = 0;
-    private float timeLeft;
-
     [Header("Music")]
     public AudioSource musicSource;
     public AudioClip newMusic;
@@ -65,8 +56,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = FPS;
-
         if (PlayerPrefs.HasKey("SV")) {
             sv = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("SV"));
             coin = sv.coin;
@@ -122,20 +111,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        accum += Time.timeScale / Time.deltaTime;
-        frames++;
-
-        if (timeLeft <= 0.0f)
-        {
-            float fps = accum / frames;
-            fpsText.text = $"FPS: {fps:0.}";
-
-            timeLeft = updateInterval;
-            accum = 0.0f;
-            frames = 0;
-        }
-
         if (!musicSource.isPlaying) 
         {
             musicSource.clip = newMusic; 
