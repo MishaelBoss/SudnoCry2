@@ -10,6 +10,7 @@ public class ClicerAnimDOTween : MonoBehaviour
             .SetLoops(-1, LoopType.Yoyo);
         //Invoke("Restart", 0.1f);
     }
+
     public void Click()
     {
         //animator.SetTrigger("Click");
