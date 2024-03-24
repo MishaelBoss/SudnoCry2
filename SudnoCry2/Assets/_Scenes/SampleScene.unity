@@ -10967,6 +10967,7 @@ GameObject:
   - component: {fileID: 1484373998}
   - component: {fileID: 1484373997}
   - component: {fileID: 1484373996}
+  - component: {fileID: 1484374003}
   m_Layer: 5
   m_Name: Restart playing
   m_TagString: Untagged
@@ -11229,6 +11230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1484374003}
+        m_TargetAssemblyTypeName: ButtonAnimatorPanel, Assembly-CSharp
+        m_MethodName: BlackPanel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1484374001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11267,6 +11280,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484373994}
   m_CullTransparentMesh: 1
+--- !u!114 &1484374003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484373994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5b8baddc5ad344a831f3ee9d39c1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 0}
 --- !u!1 &1488747999
 GameObject:
   m_ObjectHideFlags: 0
@@ -12692,6 +12718,7 @@ GameObject:
   - component: {fileID: 1692116745}
   - component: {fileID: 1692116744}
   - component: {fileID: 1692116743}
+  - component: {fileID: 1692116750}
   m_Layer: 5
   m_Name: Continue playing
   m_TagString: Untagged
@@ -12727,7 +12754,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692116741}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bf4b5f8d53f2207438fc20adaf30178b, type: 2}
   m_CullingMode: 0
@@ -12942,6 +12969,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1692116750}
+        m_TargetAssemblyTypeName: ButtonAnimatorPanel, Assembly-CSharp
+        m_MethodName: BlackPanel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1436705852}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -12992,6 +13031,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692116741}
   m_CullTransparentMesh: 1
+--- !u!114 &1692116750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692116741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5b8baddc5ad344a831f3ee9d39c1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 0}
 --- !u!1 &1697868946
 GameObject:
   m_ObjectHideFlags: 0

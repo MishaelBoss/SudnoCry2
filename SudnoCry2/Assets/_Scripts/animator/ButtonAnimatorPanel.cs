@@ -10,10 +10,18 @@ public class ButtonAnimatorPanel : MonoBehaviour
     [Header("Animator")]
     Animator animator;
 
-    Vector3 ToObject;
-
     void Start()
-        => animator = GetComponent<Animator>();
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    public void BlackPanel2() {
+
+        DOTween.Sequence()
+            .Append(transform.DOPunchPosition(new Vector3(0, 3, 0), 0.5f))
+            .AppendInterval(0.1f)
+            .Append(transform.DOPunchPosition(new Vector3(0, 0, 0), 0.7f));
+    }
 
     public void BlackPanel()
     {
