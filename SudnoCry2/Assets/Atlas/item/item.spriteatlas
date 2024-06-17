@@ -59,7 +59,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 510aec00e4f4e8f4c8288a993d875184: -6479006617712780294
-    - 0433cd40bba62b74b8e14d9e1d658cbf: 6212394838527743946
+    - 0433cd40bba62b74b8e14d9e1d658cbf: 21300000
     - 4e42991439f1ead4bbba03db64af168f: 21300000
     - 54b43e16e073d244da2087c5f8cc2f6b: 2539776844200063086
     - d1d0c856ba865864483313244f9e485b: -4338928236674095663
@@ -70,7 +70,7 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -6479006617712780294, guid: 510aec00e4f4e8f4c8288a993d875184, type: 3}
-  - {fileID: 6212394838527743946, guid: 0433cd40bba62b74b8e14d9e1d658cbf, type: 3}
+  - {fileID: 21300000, guid: 0433cd40bba62b74b8e14d9e1d658cbf, type: 3}
   - {fileID: 21300000, guid: 4e42991439f1ead4bbba03db64af168f, type: 3}
   - {fileID: 2539776844200063086, guid: 54b43e16e073d244da2087c5f8cc2f6b, type: 3}
   - {fileID: -4338928236674095663, guid: d1d0c856ba865864483313244f9e485b, type: 3}
@@ -81,7 +81,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - "\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1_0"
-  - NewVersion_0
+  - NewVersion
   - coin
   - finger presses_0
   - Cup_0

@@ -1,10 +1,8 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
-using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +35,7 @@ public class GameManager : MonoBehaviour
     public int[] CostInt;
     private int ClickScore = 1;
     public int[] CostBonus;
+    private int TotalBonus;
 
     [Header("TextCoin")]
     public Text[] CostText;
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < 1; i++)
             {
                 CostBonus[i] = sv.CostBonus[i];
+                TotalBonus += sv.CostBonus[i];
             }
 
             for (int i = 0; i < 2; i++)
@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine(BonusShop());
+
+        DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
+        TimeSpan ts = DateTime.Now - dt;
+        coin += (int)ts.TotalSeconds * TotalBonus;
 
         audioCoin = GetComponent<AudioSource>();
         audioCoin = GetComponent<AudioSource>();
@@ -208,6 +212,27 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("language", language);
     }
 
+#if UNITY_ANDROID && !UNITY_EDITOR
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause) {
+            sv.coin = coin;
+            sv.ClickScore = ClickScore;
+            sv.CostBonus = new int[1];
+            sv.CostInt = new int[2];
+
+            for (int i = 0; i < 1; i++)
+                sv.CostBonus[i] = CostBonus[i];
+
+            for (int i = 0; i < 2; i++)
+                sv.CostInt[i] = CostInt[i];
+
+            sv.Date[0] = DateTime.Now.Year; sv.Date[1] = DateTime.Now.Month; sv.Date[2] = DateTime.Now.Day; sv.Date[3] = DateTime.Now.Hour; sv.Date[4] = DateTime.Now.Minute; sv.Date[5] = DateTime.Now.Second;
+
+            PlayerPrefs.SetString("SV", JsonUtility.ToJson(sv));
+        }
+    }
+#else
     private void OnApplicationQuit()
     {
         sv.coin = coin;
@@ -216,17 +241,16 @@ public class GameManager : MonoBehaviour
         sv.CostInt = new int[2];
 
         for(int i = 0; i < 1; i++)
-        {
             sv.CostBonus[i] = CostBonus[i];
-        }
 
         for (int i = 0; i < 2; i++)
-        {
             sv.CostInt[i] = CostInt[i];
-        }
+
+        sv.Date[0] = DateTime.Now.Year; sv.Date[1] = DateTime.Now.Month; sv.Date[2] = DateTime.Now.Day; sv.Date[3] = DateTime.Now.Hour; sv.Date[4] = DateTime.Now.Minute; sv.Date[5] = DateTime.Now.Second;
 
         PlayerPrefs.SetString("SV", JsonUtility.ToJson(sv));
     }
+#endif
 }
 
 [Serializable]
@@ -236,4 +260,5 @@ public class Save
     public int ClickScore;
     public int[] CostInt;
     public int[] CostBonus;
+    public int[] Date = new int[6];
 }
