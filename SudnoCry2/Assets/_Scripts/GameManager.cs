@@ -78,13 +78,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(BonusShop());
 
-        DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
-        TimeSpan ts = DateTime.Now - dt;
-        coin += (int)ts.TotalSeconds * TotalBonus;
-
-        audioCoin = GetComponent<AudioSource>();
-        audioCoin = GetComponent<AudioSource>();
-
         if (PlayerPrefs.HasKey("Registr") && PlayerPrefs.GetInt("Registr", 1) == 1)
         {
             Langes.gameObject.SetActive(false);
@@ -111,6 +104,13 @@ public class GameManager : MonoBehaviour
             TextName.text = "Ваш ник:  " + namePlayer;
         }
         else _create_name_achieve.gameObject.SetActive(false);
+
+        DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
+        TimeSpan ts = DateTime.Now - dt;
+        coin += (int)ts.TotalSeconds * TotalBonus;
+
+        audioCoin = GetComponent<AudioSource>();
+        audioCoin = GetComponent<AudioSource>();
     }
 
     void Update()

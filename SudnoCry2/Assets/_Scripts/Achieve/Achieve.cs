@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Achieve : MonoBehaviour
 {
@@ -6,17 +7,8 @@ public class Achieve : MonoBehaviour
     private float StartTime;
     [SerializeField] private float EndTime = 1f;
 
-    [Header("Audio")]
-    public AudioSource Audio;
-
-    [Header("GameObjectAchieve")]
-    public GameObject _achieve;
-
-    [Header("Animator")]
-    Animator animator;
-
-    void Start()
-        => animator = GetComponent<Animator>();
+    [SerializeField]
+    UnityEvent active;
 
     void Update()
     {
@@ -24,16 +16,12 @@ public class Achieve : MonoBehaviour
 
         if (StartTime >= EndTime)
         {
-            _achieve.gameObject.SetActive(true);
-            animator.SetTrigger("Black");
+            gameObject.SetActive(true);
+            active.Invoke();
             Invoke("DeketAcieve", 2f);
-            
         }
     }
 
     private void DeketAcieve()
-    {
-        Audio.gameObject.SetActive(false);
-        _achieve.gameObject.SetActive(false);
-    }
+        => gameObject.SetActive(false);
 }
