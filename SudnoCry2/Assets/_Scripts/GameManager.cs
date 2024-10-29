@@ -3,9 +3,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using TMPro;
+using System.Diagnostics;
 
+[CreateAssetMenu(menuName = "Redmer/GameManager", fileName = "GameManager", order = 0)]
+[DisallowMultipleComponent, AddComponentMenu("Redmer/Main Scripts/ GameManager")]
 public class GameManager : MonoBehaviour
 {
+    [Header("UI")]
+    [Tooltip("Getting data from player settings")] public TMP_Text version;
+
     [Header("Music")]
     public AudioSource musicSource;
     public AudioClip newMusic;
@@ -13,7 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("CreateNameAndCompani")]
     public InputField createNameInputField;
     public Text InputFieldName;
-    public string Name;
+    [SerializeField, TextArea(1, 5)] private string Name;
 
     [Header("PanelLanges")]
     public GameObject Langes;
@@ -22,13 +29,13 @@ public class GameManager : MonoBehaviour
     public Button RestartPlaying;
     public Button ContinuePlaying;
     public Button StartPlay;
-    public Button achive;
+    public Button Profile;
+    public Button Achive;
 
     [Header("OutputCharacterName")]
-    private string namePlayer;
     public Text TextName;
-
     public GameObject _create_name_achieve;
+    [SerializeField, TextArea(1, 5)] private string namePlayer;
 
     [Header("Mony")]
     [SerializeField] int coin;
@@ -78,13 +85,16 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(BonusShop());
 
+        version.text = Application.version;
+
         if (PlayerPrefs.HasKey("Registr") && PlayerPrefs.GetInt("Registr", 1) == 1)
         {
             Langes.gameObject.SetActive(false);
             ContinuePlaying.gameObject.SetActive(true);
             RestartPlaying.gameObject.SetActive(true);
             StartPlay.gameObject.SetActive(false);
-            achive.gameObject.SetActive(true);
+            Achive.gameObject.SetActive(true);
+            Profile.gameObject.SetActive(true);
         }
         else
         {
@@ -92,7 +102,8 @@ public class GameManager : MonoBehaviour
             ContinuePlaying.gameObject.SetActive(false);
             StartPlay.gameObject.SetActive(true);
             Langes.gameObject.SetActive(true);
-            achive.gameObject.SetActive(false);
+            Achive.gameObject.SetActive(false);
+            Profile.gameObject.SetActive(false);
         }
 
         if (PlayerPrefs.HasKey("NamePlayer"))

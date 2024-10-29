@@ -8932,8 +8932,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1567107598}
-  - {fileID: 1985700618}
   - {fileID: 1722075610}
+  - {fileID: 1985700618}
   - {fileID: 878706218}
   - {fileID: 1489233341}
   m_Father: {fileID: 501311608}
@@ -8956,10 +8956,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.34117648, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0.34117648, b: 1, a: 0.39215687}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13245,6 +13245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9e023f892a8414281150e5bb7d374e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: {fileID: 97299575}
   musicSource: {fileID: 877214883}
   newMusic: {fileID: 8300000, guid: 580bd4cd521d1dd4c941a91c69d93991, type: 3}
   createNameInputField: {fileID: 1673822324}
@@ -13254,9 +13255,11 @@ MonoBehaviour:
   RestartPlaying: {fileID: 1484374000}
   ContinuePlaying: {fileID: 1692116747}
   StartPlay: {fileID: 1947605708}
-  achive: {fileID: 0}
+  Profile: {fileID: 14067784}
+  Achive: {fileID: 1275836439}
   TextName: {fileID: 690442488}
   _create_name_achieve: {fileID: 601355496}
+  namePlayer: 
   coin: 0
   CostInt: 64000000e8030000c4090000
   CostBonus: 00000000
@@ -15379,9 +15382,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.3398223, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
