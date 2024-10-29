@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 using TMPro;
-using System.Diagnostics;
+using NaughtyAttributes;
 
 [CreateAssetMenu(menuName = "Redmer/GameManager", fileName = "GameManager", order = 0)]
 [DisallowMultipleComponent, AddComponentMenu("Redmer/Main Scripts/ GameManager")]
@@ -25,12 +25,11 @@ public class GameManager : MonoBehaviour
     [Header("PanelLanges")]
     public GameObject Langes;
 
-    [Header("Button")]
-    public Button RestartPlaying;
-    public Button ContinuePlaying;
-    public Button StartPlay;
-    public Button Profile;
-    public Button Achive;
+    [Foldout("Button")] public Button RestartPlaying;
+    [Foldout("Button")] public Button ContinuePlaying;
+    [Foldout("Button")] public Button StartPlay;
+    [Foldout("Button")] public Button Profile;
+    [Foldout("Button")] public Button Achive;
 
     [Header("OutputCharacterName")]
     public Text TextName;
