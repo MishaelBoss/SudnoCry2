@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("NamePlayer"))
         {
             _create_name_achieve.gameObject.SetActive(true);
-            TextName.color = new Color(255, 255, 255);
+            //TextName.color = new Color(255, 255, 255);
 
             TextName.text = namePlayer = PlayerPrefs.GetString("NamePlayer");
             TextName.text = "Ваш ник:  " + namePlayer;

@@ -67,6 +67,13 @@
         "DisplayIdEnabled": false,
         "DisplayId": ""
     },
+    "m_ScreenCaptureSettings": {
+        "Mode": 0,
+        "m_LastSaveLocation": [
+            "C:\\Users\\micha\\Documents\\GitHub\\SudnoCry2\\SudnoCry2",
+            "C:\\Users\\micha\\Documents\\GitHub\\SudnoCry2\\SudnoCry2"
+        ]
+    },
     "m_InputSettings": {
         "ShiftModifier": false,
         "SendText": "",
