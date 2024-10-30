@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject notMany;
 
+    public GameObject ClickParent, PointTextClickScore;
+    public ClickParent[] clickTextPool = new ClickParent[15];
+    private int clickNum;
+
     private Save sv = new Save();
 
     private void Awake()
@@ -120,7 +124,9 @@ public class GameManager : MonoBehaviour
         coin += (int)ts.TotalSeconds * TotalBonus;
 
         audioCoin = GetComponent<AudioSource>();
-        audioCoin = GetComponent<AudioSource>();
+
+        for (int i = 0; i < clickTextPool.Length; i++)
+            clickTextPool[i] = Instantiate(PointTextClickScore, ClickParent.transform).GetComponent<ClickParent>();
     }
 
     void Update()
@@ -157,6 +163,9 @@ public class GameManager : MonoBehaviour
     {
         coin += ClickScore;
         audioCoin.PlayOneShot(din);
+
+        clickTextPool[clickNum].StartMotion(ClickScore);
+        clickNum = clickNum == clickTextPool.Length - 1 ? 0 : clickNum + 1;
     }
 
     public void BuyLevel() {
