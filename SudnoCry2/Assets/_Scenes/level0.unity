@@ -3670,11 +3670,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 877214882}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 540, y: 960}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253337591
@@ -3689,7 +3689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68983dcda63b688439eb03c7c8d2931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valumeParametr: effectVol
+  valumeParametr: masterVol
   mixer: {fileID: 24100000, guid: cc30cdaf7bb2d3343bda29591b08a721, type: 2}
 --- !u!82 &253337592
 AudioSource:
@@ -3701,8 +3701,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 959011092085712882, guid: cc30cdaf7bb2d3343bda29591b08a721, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ff496f5a42ad9df4bb65b1d8f7724ef9, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -8025,8 +8025,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 253337590}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8142,7 +8141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68983dcda63b688439eb03c7c8d2931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valumeParametr: musicVol
+  valumeParametr: masterVol
   mixer: {fileID: 24100000, guid: cc30cdaf7bb2d3343bda29591b08a721, type: 2}
 --- !u!1 &878706217
 GameObject:
@@ -17741,3 +17740,4 @@ SceneRoots:
   - {fileID: 1601603867}
   - {fileID: 1607661885}
   - {fileID: 877214882}
+  - {fileID: 253337590}
