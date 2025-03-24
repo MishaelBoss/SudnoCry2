@@ -6,11 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/level0.unity
+    path: Assets/_SudnoCry2/_Scenes/level0.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 7c0fa4358c8dee34e9ad90a898a3f083, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 9c0b903f37e924b40ad320deb4290f1e, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: beacce61eeaf5df478601b1ba18ef888, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0f3c723e2881bef4483924f8bf09145c, type: 2}
-  m_UseUCBPForAssetBundles: 0
