@@ -295,6 +295,18 @@ MonoBehaviour:
           m_StringArgument: https://www.youtube.com/channel/UCgMNXe8ooAQdunLHOkztAew
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1607661886}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OpenProfile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.youtube.com/channel/UCgMNXe8ooAQdunLHOkztAew
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &14067786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,18 +1163,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1607661886}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: DeletPlayerPrefs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 767064176}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1177,7 +1177,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1607661886}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: RestartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1607661886}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: DeleatSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1574,18 +1586,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1607661886}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SetName
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 954019549}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1600,7 +1600,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1607661886}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: SetName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1607661886}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2770,7 +2782,7 @@ GameObject:
   - component: {fileID: 174369731}
   - component: {fileID: 174369730}
   m_Layer: 5
-  m_Name: 'Text (reword) '
+  m_Name: 'Text (price) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3345,7 +3357,7 @@ GameObject:
   - component: {fileID: 253337592}
   - component: {fileID: 253337591}
   m_Layer: 5
-  m_Name: Effect
+  m_Name: AudioSource (Sound)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,15 +3371,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253337589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9812171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1913620984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540, y: 960}
+  m_AnchoredPosition: {x: 30.71643, y: 126.957275}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253337591
@@ -4435,7 +4447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371231605}
   m_Layer: 5
-  m_Name: BarMony
+  m_Name: Bar (Mony)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4961,7 +4973,7 @@ GameObject:
   - component: {fileID: 501311606}
   - component: {fileID: 501311605}
   m_Layer: 5
-  m_Name: DinamicCanvas
+  m_Name: StaticCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6716,7 +6728,7 @@ GameObject:
   - component: {fileID: 767064178}
   - component: {fileID: 767064181}
   m_Layer: 5
-  m_Name: ResetGame
+  m_Name: Panel (ResetGame)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7666,7 +7678,7 @@ GameObject:
   - component: {fileID: 877214883}
   - component: {fileID: 877214884}
   m_Layer: 5
-  m_Name: Music
+  m_Name: AudioSource (Music)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7680,15 +7692,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877214881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9812171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1913620984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540, y: 960}
+  m_AnchoredPosition: {x: 30.71643, y: 126.957275}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &877214883
@@ -7813,7 +7825,7 @@ GameObject:
   - component: {fileID: 878706222}
   - component: {fileID: 878706219}
   m_Layer: 5
-  m_Name: Bar Achieve
+  m_Name: Bar (Achieve)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8641,7 +8653,7 @@ GameObject:
   - component: {fileID: 1015664106}
   - component: {fileID: 1015664105}
   m_Layer: 5
-  m_Name: Text (NickName) (1)
+  m_Name: Text (Earned)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10779,7 +10791,7 @@ GameObject:
   - component: {fileID: 1429099631}
   - component: {fileID: 1429099630}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DinamicCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11489,7 +11501,7 @@ GameObject:
   - component: {fileID: 1489233343}
   - component: {fileID: 1489233342}
   m_Layer: 5
-  m_Name: Bar ac
+  m_Name: Bar (Ac)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11840,7 +11852,6 @@ GameObject:
   - component: {fileID: 1607661892}
   - component: {fileID: 1607661890}
   - component: {fileID: 1607661891}
-  - component: {fileID: 1607661889}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -11877,17 +11888,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchasedProducts: []
-  TextName: {fileID: 690442488}
-  _namePlayer: 
-  createNameInputField: {fileID: 1673822324}
-  InputFieldName: {fileID: 313792401}
-  _namePlayerInputField: 
-  musicSource: {fileID: 877214883}
+  audioSourceMusic: {fileID: 877214883}
+  audioSourceSound: {fileID: 253337592}
   clipsMusic:
   - {fileID: 8300000, guid: ff496f5a42ad9df4bb65b1d8f7724ef9, type: 3}
   - {fileID: 8300000, guid: 580bd4cd521d1dd4c941a91c69d93991, type: 3}
   din: {fileID: 8300000, guid: c7f508d1f5c60924a8be5e3e08e2b754, type: 3}
-  audioCoin: {fileID: 253337592}
   coin: 0
   CostInt: 90010000f401000058020000
   CostBonus: 00000000
@@ -11911,102 +11917,6 @@ MonoBehaviour:
   - {fileID: 0}
   listAchive: {fileID: 1607661891}
   _hud: {fileID: 1607661892}
---- !u!82 &1607661889
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607661884}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 959011092085712882, guid: cc30cdaf7bb2d3343bda29591b08a721, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1607661890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12070,8 +11980,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1607661886}
   TextVersion: {fileID: 97299575}
-  TextCost: []
+  TextCost:
+  - {fileID: 174369730}
   TextDisplayCoin: {fileID: 2062534935}
+  TextDisplayNamePlayer: {fileID: 690442488}
+  TextDisplayEarned: {fileID: 1015664105}
   PanelError: {fileID: 51684691}
   PageLanges: {fileID: 1233227070}
   ButtonRestartPlaying: {fileID: 1484374000}
@@ -12079,6 +11992,7 @@ MonoBehaviour:
   ButtonStartPlay: {fileID: 1947605708}
   ButtonProfile: {fileID: 14067784}
   ButtonAchive: {fileID: 1275836439}
+  InputFieldCreateName: {fileID: 1673822324}
 --- !u!1 &1663905937
 GameObject:
   m_ObjectHideFlags: 0
@@ -12685,9 +12599,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1697868954}
-        m_TargetAssemblyTypeName: ButtonAnimatorPanel, Assembly-CSharp
-        m_MethodName: Click
+      - m_Target: {fileID: 1607661886}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12697,9 +12611,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1607661886}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ToClick
+      - m_Target: {fileID: 1697868955}
+        m_TargetAssemblyTypeName: ClicerAnimDOTween, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12717,7 +12631,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d8e09b8cd59efb4b858bb501db69511, type: 2}
   m_CullingMode: 0
@@ -12737,7 +12651,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697868946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5b8baddc5ad344a831f3ee9d39c1e9, type: 3}
   m_Name: 
@@ -12757,7 +12671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DOScale: 0.3
   DORotate: 0.1
-  RestartTime: 0
+  RestartTime: 0.2
 --- !u!1 &1709822426
 GameObject:
   m_ObjectHideFlags: 0
@@ -12943,7 +12857,7 @@ GameObject:
   - component: {fileID: 1722075612}
   - component: {fileID: 1722075611}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text (Name)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14074,6 +13988,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878105272}
   m_CullTransparentMesh: 1
+--- !u!1 &1913620983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913620984}
+  m_Layer: 0
+  m_Name: AudioSources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913620984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913620983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 509.28354, y: 833.0428, z: 2.9812171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 877214882}
+  - {fileID: 253337590}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942941629
 GameObject:
   m_ObjectHideFlags: 0
@@ -14602,7 +14549,7 @@ GameObject:
   - component: {fileID: 1985700620}
   - component: {fileID: 1985700619}
   m_Layer: 5
-  m_Name: Bar up
+  m_Name: Bar (up)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15608,5 +15555,4 @@ SceneRoots:
   - {fileID: 1429099633}
   - {fileID: 438985417}
   - {fileID: 1607661885}
-  - {fileID: 877214882}
-  - {fileID: 253337590}
+  - {fileID: 1913620984}

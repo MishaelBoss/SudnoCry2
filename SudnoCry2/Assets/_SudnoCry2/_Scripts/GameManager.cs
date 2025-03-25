@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Redmer/GameManager", fileName = "GameManager", order = 0)]
 [DisallowMultipleComponent, AddComponentMenu("Redmer/Main Scripts/ GameManager")]
@@ -11,23 +10,15 @@ public class GameManager : MonoBehaviour
 {
     public List<product> purchasedProducts = new List<product>();
 
-    [Header("OutputCharacterName")]
-    public Text TextName;
-    [SerializeField, TextArea(1, 5)] private string _namePlayer;
+    [Header("Data")]
+    private string _namePlayer;
 
-    [Header("CreateNameAndCompani")]
-    public InputField createNameInputField;
-    public Text InputFieldName;
-    [SerializeField, TextArea(1, 5)] private string _namePlayerInputField;
-
-    [Header("Music")]
-    public AudioSource musicSource;
+    [Header("Audio controller")]
+    public AudioSource audioSourceMusic;
+    public AudioSource audioSourceSound;
     public List<AudioClip> clipsMusic = new List<AudioClip>();
-    private int index = 0;
-
-    [Header("PlayCoinAudio")]
     public AudioClip din;
-    public AudioSource audioCoin;
+    private int index = 0;
 
     [Header("Mony")]
     public int coin;
@@ -73,17 +64,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         Initialization();
-
-        TextName.text = "Ваш ник: " + _namePlayer;
-
-        DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
-        TimeSpan ts = DateTime.Now - dt;
-
-        StartCoroutine(BonusShop());
-        _hud.TextVersion.text = Application.version;
-        coin += (int)ts.TotalSeconds * TotalBonus;
-
-        audioCoin = GetComponent<AudioSource>();
+        IsRegiter();
     }
 
     private void Initialization() {
@@ -93,13 +74,36 @@ public class GameManager : MonoBehaviour
             _hud = FindAnyObjectByType<HUD>();
     }
 
+    private void IsRegiter() {
+        if (sv.isRegister)
+        {
+            _hud.IsRegister(true);
+            _hud.UpdateCoin(coin);
+
+            DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
+            TimeSpan ts = DateTime.Now - dt;
+
+            StartCoroutine(BonusShop());
+            _hud.TextVersion.text = Application.version;
+            coin += (int)ts.TotalSeconds * TotalBonus;
+        }
+        else _hud.IsRegister(false);
+    }
+
     private void Update()
     {
-        if (!musicSource.isPlaying)
-            NextNewMusic();
+        CheckNextNewMusic();
+        CheckAchieve();
 
         _hud.TextCost[0].text = "price: " + CostInt[0] + "$";
+    }
 
+    private void CheckNextNewMusic() {
+        if (!audioSourceMusic.isPlaying)
+            NextNewMusic();
+    }
+
+    private void CheckAchieve() {
         if (coin >= 100)
             listAchive.Achieve(0);
     }
@@ -107,9 +111,8 @@ public class GameManager : MonoBehaviour
     public void ToClick()
     {
         coin += ClickScore;
-        audioCoin.PlayOneShot(din);
-
-        _hud.UpdateCoinToClick(coin);
+        _hud.UpdateCoin(coin);
+        audioSourceSound.PlayOneShot(din);
 
         for (int i = 0; i < clickTextPool.Length; i++)
             clickTextPool[i] = Instantiate(PointTextClickScore, ClickParent.transform).GetComponent<ClickParent>();
@@ -138,45 +141,30 @@ public class GameManager : MonoBehaviour
 
     public void SetName()
     {
-        _namePlayerInputField = InputFieldName.text;
-        sv.namePlayer = _namePlayerInputField;
-        PlayerPrefs.SetInt("Registr", 1);
+        sv.namePlayer = _hud.InputFieldCreateName.text;
+        sv.isRegister = true;
+        IsRegiter();
     }
 
     private void NextNewMusic()
     {
         if (index < clipsMusic.Count)
         {
-            musicSource.clip = clipsMusic[index];
+            audioSourceMusic.clip = clipsMusic[index];
+            audioSourceMusic.Play();
             index++;
-            musicSource.Play();
         }
         else index = 0;
     }
 
-    public void DeletPlayerPrefs()
+    public void OpenProfile()
+        => _hud.UpdateUITProfile(_namePlayer);
+
+    public void DeleatSave()
         => PlayerPrefs.DeleteAll();
 
-    public void RestartGame() {
-        if (PlayerPrefs.HasKey("Registr") && PlayerPrefs.GetInt("Registr", 1) == 1)
-        {
-            _hud.PageLanges.gameObject.SetActive(false);
-            _hud.ButtonContinuePlaying.gameObject.SetActive(true);
-            _hud.ButtonRestartPlaying.gameObject.SetActive(true);
-            _hud.ButtonStartPlay.gameObject.SetActive(false);
-            _hud.ButtonAchive.gameObject.SetActive(true);
-            _hud.ButtonProfile.gameObject.SetActive(true);
-        }
-        else
-        {
-            _hud.PageLanges.gameObject.SetActive(true);
-            _hud.ButtonRestartPlaying.gameObject.SetActive(false);
-            _hud.ButtonContinuePlaying.gameObject.SetActive(false);
-            _hud.ButtonStartPlay.gameObject.SetActive(true);
-            _hud.ButtonAchive.gameObject.SetActive(false);
-            _hud.ButtonProfile.gameObject.SetActive(false);
-        }
-    }
+    public void RestartScene()
+        => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     public void URL(string url)
         => Application.OpenURL(url);
@@ -197,7 +185,6 @@ public class GameManager : MonoBehaviour
     private void OnApplicationPause(bool pause)
     {
         if (pause) {
-            sv.namePlayer = _namePlayerInputField;
             sv.coin = coin;
             sv.ClickScore = ClickScore;
             sv.CostBonus = new int[1];
@@ -220,7 +207,6 @@ public class GameManager : MonoBehaviour
 #else
     private void OnApplicationQuit()
     {
-        sv.namePlayer = _namePlayerInputField;
         sv.coin = coin;
         sv.ClickScore = ClickScore;
         sv.CostBonus = new int[1];
@@ -245,6 +231,7 @@ public class GameManager : MonoBehaviour
 [Serializable]
 public class Save
 {
+    public bool isRegister;
     public string namePlayer;
     public int coin;
     public int ClickScore;
