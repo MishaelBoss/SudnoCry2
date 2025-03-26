@@ -10,9 +10,7 @@ public class ButtonAnimatorPanel : MonoBehaviour
     Animator animator;
 
     void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+        => animator = GetComponent<Animator>();
 
     public void BlackPanel2() {
 

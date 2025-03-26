@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(menuName = "Redmer/GameManager", fileName = "GameManager", order = 0)]
-[DisallowMultipleComponent, AddComponentMenu("Redmer/Main Scripts/ GameManager")]
 public class GameManager : MonoBehaviour
 {
     public List<product> purchasedProducts = new List<product>();
@@ -37,15 +35,32 @@ public class GameManager : MonoBehaviour
     private Save sv = new Save();
 
     private void Awake()
-    {
-        if (PlayerPrefs.HasKey("SV")) {
+        => Initialization();
+
+    public void Start()
+        => IsRegiter();
+
+    private void Initialization() {
+        if (listAchive == null)
+            listAchive = FindAnyObjectByType<ViewListAchive>();
+        if (_hud == null)
+            _hud = FindAnyObjectByType<HUD>();
+    }
+
+    private void IsRegiter() {
+        if (PlayerPrefs.HasKey("SV"))
+        {
+            _hud.IsRegister(true);
+
             sv = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("SV"));
             _namePlayer = sv.namePlayer;
             coin = sv.coin;
             ClickScore = sv.ClickScore;
 
-            foreach (product info in sv.savePurchasedProducts)
-                purchasedProducts.Add(info);
+            if (sv.savePurchasedProducts != null)
+                purchasedProducts = new List<product>(sv.savePurchasedProducts);
+            else
+                purchasedProducts = new List<product>();
 
             for (int i = 0; i < 1; i++)
             {
@@ -58,27 +73,6 @@ public class GameManager : MonoBehaviour
                 CostInt[i] = sv.CostInt[i];
                 _hud.TextCost[i].text = sv.CostInt[i] + "$";
             }
-        }
-    }
-
-    public void Start()
-    {
-        Initialization();
-        IsRegiter();
-    }
-
-    private void Initialization() {
-        if (listAchive == null)
-            listAchive = FindAnyObjectByType<ViewListAchive>();
-        if (_hud == null)
-            _hud = FindAnyObjectByType<HUD>();
-    }
-
-    private void IsRegiter() {
-        if (sv.isRegister)
-        {
-            _hud.IsRegister(true);
-            _hud.UpdateCoin(coin);
 
             DateTime dt = new DateTime(sv.Date[0], sv.Date[1], sv.Date[2], sv.Date[3], sv.Date[4], sv.Date[5]);
             TimeSpan ts = DateTime.Now - dt;
@@ -95,6 +89,7 @@ public class GameManager : MonoBehaviour
         CheckNextNewMusic();
         CheckAchieve();
 
+        _hud.UpdateCoin(coin);
         _hud.TextCost[0].text = "price: " + CostInt[0] + "$";
     }
 
@@ -111,7 +106,6 @@ public class GameManager : MonoBehaviour
     public void ToClick()
     {
         coin += ClickScore;
-        _hud.UpdateCoin(coin);
         audioSourceSound.PlayOneShot(din);
 
         for (int i = 0; i < clickTextPool.Length; i++)
@@ -142,7 +136,6 @@ public class GameManager : MonoBehaviour
     public void SetName()
     {
         sv.namePlayer = _hud.InputFieldCreateName.text;
-        sv.isRegister = true;
         IsRegiter();
     }
 
@@ -196,8 +189,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < 2; i++)
                 sv.CostInt[i] = CostInt[i];
 
-            foreach (product info in purchasedProducts)
-                sv.savePurchasedProducts.Add(info);
+            sv.savePurchasedProducts = new List<product>(purchasedProducts);
 
             sv.Date[0] = DateTime.Now.Year; sv.Date[1] = DateTime.Now.Month; sv.Date[2] = DateTime.Now.Day; sv.Date[3] = DateTime.Now.Hour; sv.Date[4] = DateTime.Now.Minute; sv.Date[5] = DateTime.Now.Second;
 
@@ -218,8 +210,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 2; i++)
             sv.CostInt[i] = CostInt[i];
 
-        foreach (product info in purchasedProducts)
-            sv.savePurchasedProducts.Add(info);
+        sv.savePurchasedProducts = new List<product>(purchasedProducts);
 
         sv.Date[0] = DateTime.Now.Year; sv.Date[1] = DateTime.Now.Month; sv.Date[2] = DateTime.Now.Day; sv.Date[3] = DateTime.Now.Hour; sv.Date[4] = DateTime.Now.Minute; sv.Date[5] = DateTime.Now.Second;
 
@@ -231,11 +222,10 @@ public class GameManager : MonoBehaviour
 [Serializable]
 public class Save
 {
-    public bool isRegister;
     public string namePlayer;
     public int coin;
     public int ClickScore;
-    public List<product> savePurchasedProducts = new List<product>();
+    public List<product> savePurchasedProducts;
     public int[] CostInt;
     public int[] CostBonus;
     public int[] Date = new int[6];
